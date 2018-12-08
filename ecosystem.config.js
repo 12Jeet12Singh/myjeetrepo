@@ -15,7 +15,8 @@ module.exports = {
      env: {
       NODE_ENV: 'production',//'development',
       PORT:3000,
-      SERVIC_DB_PORT:4000
+      SERVIC_DB_PORT:4000,
+      Q_URI: 'amqp://swaupeon:VhXjT-P3WiSXPQp4B2unFYDnY74uqn2H@dinosaur.rmq.cloudamqp.com/swaupeon'
     } 
    /*  env_production: {
       NODE_ENV: 'production',
@@ -37,7 +38,23 @@ module.exports = {
    /*  env_production: {
       NODE_ENV: 'production',
     } */
+  },
+
+  {   // Third APPL.
+    name: 'Mailing Service',
+    script: basePath+'/mailing_service/index.js',
+    args: 'one two',
+    instances: 1,
+    autorestart: true,
+    watch: true,
+    max_memory_restart: '1G',
+    env: {
+      MJ_API_PUBLIC='01248e2877dd0de67897adde089b6504',
+      MJ_API_SECRET='a6c2093f793b1b799c75f48f24c64588',
+      Q_URI: 'amqp://swaupeon:VhXjT-P3WiSXPQp4B2unFYDnY74uqn2H@dinosaur.rmq.cloudamqp.com/swaupeon'
+    }
   }
+
 
 ]
 
