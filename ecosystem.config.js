@@ -49,9 +49,7 @@ module.exports = {
     watch: true,
     max_memory_restart: '1G',
     env: {
-      MJ_API_PUBLIC='01248e2877dd0de67897adde089b6504',
-      MJ_API_SECRET='a6c2093f793b1b799c75f48f24c64588',
-      Q_URI: 'amqp://swaupeon:VhXjT-P3WiSXPQp4B2unFYDnY74uqn2H@dinosaur.rmq.cloudamqp.com/swaupeon'
+      // todo: //
     }
   }
 
